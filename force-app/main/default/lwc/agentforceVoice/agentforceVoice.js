@@ -49,16 +49,16 @@ export default class AgentforceVoice extends LightningElement {
 
     async textToSpeech(text) {
         try {
-            const response = await fetch('https://api.openai.com/v1/audio/speech', {
+            const response = await fetch('https://api.groq.com/openai/v1/audio/speech', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer YOUR_OPENAI_API_KEY`
                 },
                 body: JSON.stringify({
-                    model: 'tts-1',
+                    model: 'playai-tts',
                     input: text,
-                    voice: 'alloy'
+                    voice: 'Arista-PlayAI'
                 })
             });
 

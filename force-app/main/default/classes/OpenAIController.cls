@@ -87,7 +87,7 @@ public with sharing class OpenAIController {
             
             // Set up the HTTP request
             HttpRequest req = new HttpRequest();
-            req.setEndpoint('https://api.openai.com/v1/audio/transcriptions');
+            req.setEndpoint('https://api.groq.com/openai/v1/audio/transcriptions');
             req.setMethod('POST');
             req.setHeader('Authorization', 'Bearer ' + settings.API_Key__c);
             
@@ -101,7 +101,7 @@ public with sharing class OpenAIController {
             // Add model parameter
             body += '--' + boundary + '\r\n';
             body += 'Content-Disposition: form-data; name="model"\r\n\r\n';
-            body += 'whisper-1\r\n';
+            body += 'whisper-large-v3-turbo\r\n';
             
             // Removed language parameter to enable automatic language detection
             
@@ -173,7 +173,7 @@ public with sharing class OpenAIController {
                 
                 // Create a simplified request
                 HttpRequest req = new HttpRequest();
-                req.setEndpoint('https://api.openai.com/v1/audio/transcriptions');
+                req.setEndpoint('https://api.groq.com/openai/v1/audio/transcriptions');
                 req.setMethod('POST');
                 req.setHeader('Authorization', 'Bearer ' + settings.API_Key__c);
                 
@@ -185,7 +185,7 @@ public with sharing class OpenAIController {
                 String body = '';
                 body += '--' + boundary + '\r\n';
                 body += 'Content-Disposition: form-data; name="model"\r\n\r\n';
-                body += 'whisper-1\r\n';
+                body += 'whisper-large-v3-turbo\r\n';
                 
                 // Removed language parameter for automatic language detection
                 body += '--' + boundary + '\r\n';
@@ -242,7 +242,7 @@ public with sharing class OpenAIController {
             // Set up the HTTP request
             HttpRequest req = new HttpRequest();
             // Direct API endpoint
-            req.setEndpoint('https://api.openai.com/v1/chat/completions');
+            req.setEndpoint('https://api.groq.com/openai//v1/chat/completions');
             req.setMethod('POST');
             req.setHeader('Authorization', 'Bearer ' + settings.API_Key__c);
             req.setHeader('Content-Type', 'application/json');
@@ -301,7 +301,7 @@ public with sharing class OpenAIController {
     /**
      * Convert text to speech using OpenAI's TTS API
      * @param text Text to convert to speech
-     * @param voice Voice to use (e.g., alloy, echo, etc.)
+     * @param voice Voice to use (e.g., alloy, Arista-PlayAI, echo, etc.)
      * @return Base64-encoded audio data
      */
     @AuraEnabled
@@ -338,14 +338,14 @@ public with sharing class OpenAIController {
             // Set up the HTTP request
             HttpRequest req = new HttpRequest();
             // Direct API endpoint
-            req.setEndpoint('https://api.openai.com/v1/audio/speech');
+            req.setEndpoint('https://api.groq.com/openai/v1/audio/speech');
             req.setMethod('POST');
             req.setHeader('Authorization', 'Bearer ' + settings.API_Key__c);
             req.setHeader('Content-Type', 'application/json');
             
             // Build the request body
             Map<String, Object> requestBody = new Map<String, Object>();
-            requestBody.put('model', 'tts-1');
+            requestBody.put('model', 'playai-tts');
             requestBody.put('voice', voice);
             requestBody.put('input', text);
             // Explicitly set format to mp3 for better browser compatibility

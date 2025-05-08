@@ -4,15 +4,15 @@
     <protected>false</protected>
     <values>
         <field>API_Key__c</field>
-        <value xsi:type="xsd:string">your_openai_api_key_here</value>
+        <value xsi:type="xsd:string">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</value>
     </values>
     <values>
         <field>Default_Model__c</field>
-        <value xsi:type="xsd:string">gpt-4o</value>
+        <value xsi:type="xsd:string">llama-3.3-70b-versatile</value>
     </values>
     <values>
         <field>Default_Voice__c</field>
-        <value xsi:type="xsd:string">alloy</value>
+        <value xsi:type="xsd:string">Arista-PlayAI</value>
     </values>
     <values>
         <field>Is_Enabled__c</field>

@@ -51,9 +51,9 @@ public with sharing class VoiceAssistantSettingsController {
                 openAIIsEnabled = openAISettings.Is_Enabled__c;
             } else {
                 // Default values if no settings found
-                openAIApiKey = '';
-                openAIDefaultModel = 'gpt-4o';
-                openAIDefaultVoice = 'alloy';
+                openAIApiKey = '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';
+                openAIDefaultModel = 'llama-3.3-70b-versatile';
+                openAIDefaultVoice = 'Arista-PlayAI';
                 openAIIsEnabled = true;
             }
             
@@ -93,7 +93,7 @@ public with sharing class VoiceAssistantSettingsController {
     private void initializeOptions() {
         // Initialize voice options
         voiceOptions = new List<SelectOption>();
-        voiceOptions.add(new SelectOption('alloy', 'Alloy'));
+        voiceOptions.add(new SelectOption('alloy', 'Arista-PlayAI'));
         voiceOptions.add(new SelectOption('echo', 'Echo'));
         voiceOptions.add(new SelectOption('fable', 'Fable'));
         voiceOptions.add(new SelectOption('onyx', 'Onyx'));
@@ -179,7 +179,7 @@ public with sharing class VoiceAssistantSettingsController {
             // Set up the HTTP request
             HttpRequest req = new HttpRequest();
             // Use direct URL instead of Named Credential
-            req.setEndpoint('https://api.openai.com/v1/models');
+            req.setEndpoint('https://api.groq.com/openai/v1/models');
             req.setMethod('GET');
             req.setHeader('Authorization', 'Bearer ' + openAIApiKey);
             req.setTimeout(10000); // 10-second timeout

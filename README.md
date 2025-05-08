@@ -111,7 +111,7 @@ Note : if you're unsure of what you need to do on this part, please refer to thi
    - **OpenAI Settings**:
      - API Key: Your OpenAI API key
      - Default Model: `gpt-3.5-turbo` (or any other available model)
-     - Default Voice: `alloy` (or any other available voice)
+     - Default Voice: `alloy` (or any other available voice like Arista-PlayAI)
      - Enabled: Checked
 
    - **AgentForce Settings**:

@@ -8,19 +8,19 @@
     </values>
     <values>
         <field>Client_ID__c</field>
-        <value xsi:type="xsd:string">your_client_id_here</value>
+        <value xsi:type="xsd:string">3MVG9rZjd7MXFdLhxzmfaeUVtkHy82U.84Q8LROyrzWHPtB06ZknjvHe6WqK7V29b6efS8WnJYCAMUeDyPUdT</value>
     </values>
     <values>
         <field>Client_Secret__c</field>
-        <value xsi:type="xsd:string">your_client_secret_here</value>
+        <value xsi:type="xsd:string">696E972E949AC1F5D9E84229D87865009D01C97F957F150D11A1AA8F5F8FBE16</value>
     </values>
     <values>
         <field>Is_Enabled__c</field>
-        <value xsi:type="xsd:boolean">false</value>
+        <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
         <field>Org_ID__c</field>
-        <value xsi:type="xsd:string">your_org_id_here</value>
+        <value xsi:type="xsd:string">00DgK000002l1fW</value>
     </values>
     <values>
         <field>Server_URL__c</field>

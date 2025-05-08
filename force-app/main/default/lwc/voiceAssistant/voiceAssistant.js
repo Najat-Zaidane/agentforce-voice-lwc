@@ -13,7 +13,7 @@ import getSecureApiKey from '@salesforce/apex/OpenAIController.getSecureApiKey';
 export default class VoiceAssistant extends LightningElement {
     @api recordId;
     @track isRecording = false;
-    @track voice = 'alloy';
+    @track voice = 'Arista-PlayAI';
     @track messages = [];
     @track status = 'Ready';
     @track statusClass = '';
@@ -86,7 +86,7 @@ export default class VoiceAssistant extends LightningElement {
             
             // Create FormData object for multipart/form-data request
             const formData = new FormData();
-            formData.append('model', 'whisper-1');
+            formData.append('model', 'whisper-large-v3-turbo');
             formData.append('file', audioBlob, 'audio.mp3'); // File name with mp3 extension regardless of actual format
             // Removed language parameter to enable automatic language detection
             formData.append('response_format', 'json');
@@ -95,7 +95,7 @@ export default class VoiceAssistant extends LightningElement {
             console.log('Sending direct request to OpenAI API...');
             
             // Send the request directly to OpenAI API
-            const response = await fetch('https://api.openai.com/v1/audio/transcriptions', {
+            const response = await fetch('https://api.groq.com/openai/v1/audio/transcriptions', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${apiKey}`
@@ -476,7 +476,8 @@ export default class VoiceAssistant extends LightningElement {
                         'There was an error processing your audio. Please try again with a shorter message or check your microphone setup.',
                         'error'
                     );
-                    
+                 
+                   
                     // Provide blank response for graceful failure
                     transcriptionResult = { text: '' };
                 }

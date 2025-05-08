@@ -163,7 +163,7 @@ public with sharing class AgentForceController {
             req.setEndpoint(sessionUrl);
             req.setMethod('POST');
             req.setHeader('Authorization', 'Bearer ' + accessToken);
-            req.setHeader('Content-Type', 'application/json');
+            req.setHeader('Content-Type', 'application/json'); 
             
             // Build the request body
             Map<String, Object> requestBody = new Map<String, Object>();
